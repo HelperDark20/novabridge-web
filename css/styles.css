@@ -125,7 +125,7 @@ h1.headline b{color:var(--blue);font-weight:800;}
 @media(min-width:768px){.contact-inner{padding:128px 0;}}
 .contactGrid{display:grid;grid-template-columns:1fr;gap:56px;}
 @media(min-width:1024px){.contactGrid{grid-template-columns:5fr 7fr;}}
-.contact h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(2rem,3.6vw,2.8rem);color:var(--ink);line-height:1.12;}
+.contact h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,2.2vw,1.8rem);color:var(--ink);line-height:1.4;text-align:justify;}
 .contact p.intro{margin-top:24px;max-width:380px;color:var(--slate);font-size:15.5px;line-height:1.65;text-align:justify;}
 .contactRow{display:flex;align-items:center;gap:12px;margin-top:16px;text-decoration:none;}
 .contactRow .ic{width:36px;height:36px;border-radius:3px;background:var(--creamDeep);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
