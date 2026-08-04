@@ -92,6 +92,8 @@ h1.headline b{color:var(--blue);font-weight:800;}
 .serviceItem{flex:1 1 260px;border:1.5px solid var(--creamDeep);border-radius:4px;padding:22px 24px;color:var(--slate);font-size:14.5px;line-height:1.6;text-align:justify;background:var(--white);}
 .serviceItem.wide{flex-basis:100%;}
 .serviceItem strong{display:block;color:var(--ink);font-size:15.5px;margin-bottom:8px;font-weight:600;}
+.serviceItem p{margin-top:10px;}
+.serviceItem p:first-of-type{margin-top:0;}
 
 /* ── NOSOTROS ── */
 .nosotros{background:var(--creamDeep);border-top:1px solid var(--creamDeep);}
