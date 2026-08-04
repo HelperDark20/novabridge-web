@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // ── Correo de destino ──
 $destinatario = 'info@novabridge.com.co';
+$destinatario = 'cardoje@novabridge.com.co';
+
 
 // ── Honeypot anti-spam: si este campo oculto viene lleno, es un bot.
 //    Respondemos "éxito" falso para que el bot no reintente, pero no enviamos nada. ──
