@@ -22,3 +22,44 @@ var io = new IntersectionObserver(function(entries){
   });
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+// ── Formulario de contacto ──
+var contactForm = document.getElementById('contactForm');
+if(contactForm){
+  var submitBtn = document.getElementById('contactSubmitBtn');
+  var msgBox = document.getElementById('contactFormMsg');
+
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var formData = new FormData(contactForm);
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+    msgBox.className = 'form-msg';
+
+    fetch('contact-handler.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        msgBox.textContent = '✓ Mensaje enviado. Te contactaremos pronto.';
+        msgBox.className = 'form-msg show ok';
+        contactForm.reset();
+      } else {
+        msgBox.textContent = data.error || 'No se pudo enviar el mensaje. Intenta de nuevo o escríbenos por WhatsApp.';
+        msgBox.className = 'form-msg show error';
+      }
+    })
+    .catch(function(){
+      msgBox.textContent = 'Error de conexión. Intenta de nuevo o escríbenos por WhatsApp.';
+      msgBox.className = 'form-msg show error';
+    })
+    .finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar mensaje';
+    });
+  });
+}

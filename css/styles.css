@@ -137,6 +137,12 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 .field input,.field select,.field textarea{padding:12px 14px;border-radius:3px;border:1px solid rgba(10,22,40,.18);background:transparent;color:var(--ink);font-size:14.5px;font-family:'Instrument Sans',sans-serif;}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(33,150,211,.15);}
 .field textarea{resize:vertical;}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;}
+.form-msg{font-size:13px;margin-top:12px;display:none;}
+.form-msg.show{display:block;}
+.form-msg.ok{color:var(--blueDeep);}
+.form-msg.error{color:#B23A2E;}
+#contactSubmitBtn:disabled{opacity:.6;cursor:not-allowed;}
 
 /* ── FOOTER ── */
 footer{background:var(--ink);}

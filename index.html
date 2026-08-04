@@ -159,14 +159,14 @@
         </div>
       </div>
       <div class="reveal">
-        <form onsubmit="return false;">
-          <div class="field"><label>NOMBRE</label><input type="text"></div>
-          <div class="field"><label>EMPRESA</label><input type="text"></div>
-          <div class="field"><label>CORREO</label><input type="email"></div>
-          <div class="field"><label>TELÉFONO</label><input type="tel"></div>
+        <form id="contactForm">
+          <div class="field"><label>NOMBRE</label><input type="text" name="nombre" required></div>
+          <div class="field"><label>EMPRESA</label><input type="text" name="empresa"></div>
+          <div class="field"><label>CORREO</label><input type="email" name="correo" required></div>
+          <div class="field"><label>TELÉFONO</label><input type="tel" name="telefono"></div>
           <div class="field full">
             <label>¿QUÉ NECESITAS?</label>
-            <select defaultValue="">
+            <select name="area" defaultValue="">
               <option value="" disabled selected>Selecciona un área</option>
               <option>Salud — cobertura prehospitalaria</option>
               <option>Riesgo — gestión del riesgo</option>
@@ -174,8 +174,12 @@
               <option>Otro</option>
             </select>
           </div>
-          <div class="field full"><label>MENSAJE</label><textarea rows="4"></textarea></div>
-          <div class="field full"><button type="submit" class="btn-primary" style="width:fit-content">Enviar mensaje</button></div>
+          <div class="field full"><label>MENSAJE</label><textarea name="mensaje" rows="4" required></textarea></div>
+          <input type="text" name="empresa_web" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field full">
+            <button type="submit" class="btn-primary" style="width:fit-content" id="contactSubmitBtn">Enviar mensaje</button>
+            <div id="contactFormMsg" class="form-msg"></div>
+          </div>
         </form>
       </div>
     </div>
